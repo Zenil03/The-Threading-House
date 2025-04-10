@@ -1,0 +1,199 @@
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> git init
+Initialized empty Git repository in C:/Users/zenil/OneDrive/temp/black theme/black theme/.git/
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> git add .
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> git commit -m "Initial commit"                   
+[master (root-commit) 6d7a637] Initial commit
+ 83 files changed, 17066 insertions(+)
+ create mode 100644 .editorconfig
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/extensions.json
+ create mode 100644 .vscode/launch.json
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 README.md
+ create mode 100644 angular.json
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 public/about-bac-img.png
+ create mode 100644 public/about-img1.jpg
+ create mode 100644 public/eyebrow.png
+ create mode 100644 public/eyelashes.png
+ create mode 100644 public/eyetin.png
+ create mode 100644 public/facewax.png
+ create mode 100644 public/facial.png
+ create mode 100644 public/favicon.ico
+ create mode 100644 public/gallery-7.jpg
+ create mode 100644 public/gallery-8.jpg
+ create mode 100644 public/hairmsg.png
+ create mode 100644 public/legwax.png
+ create mode 100644 public/lipthread.png
+ create mode 100644 public/logo.png
+ create mode 100644 public/manicure.png
+ create mode 100644 public/tattoo.png
+ create mode 100644 public/testimonials-1.jpg
+ create mode 100644 public/testimonials-2.jpg
+ create mode 100644 public/testimonials-3.jpg
+ create mode 100644 public/testimonials-4.jpg
+ create mode 100644 public/thread-1.jpg
+ create mode 100644 public/thread-1.png
+ create mode 100644 public/thread-2.jpg
+ create mode 100644 public/thread-2.png
+ create mode 100644 public/thread-3.jpg
+ create mode 100644 public/thread-4.jpg
+ create mode 100644 public/thread-5.jpg
+ create mode 100644 public/thread-6.jpg
+ create mode 100644 src/app/app.component.css
+ create mode 100644 src/app/app.component.html
+ create mode 100644 src/app/app.component.spec.ts
+ create mode 100644 src/app/app.component.ts
+ create mode 100644 src/app/app.config.server.ts
+ create mode 100644 src/app/app.config.ts
+ create mode 100644 src/app/app.routes.server.ts
+ create mode 100644 src/app/app.routes.ts
+ create mode 100644 src/app/components/about/about.component.css
+ create mode 100644 src/app/components/about/about.component.html
+ create mode 100644 src/app/components/about/about.component.spec.ts
+ create mode 100644 src/app/components/about/about.component.ts
+ create mode 100644 src/app/components/contact/contact.component.css
+ create mode 100644 src/app/components/contact/contact.component.html
+ create mode 100644 src/app/components/contact/contact.component.spec.ts
+ create mode 100644 src/app/components/contact/contact.component.ts
+ create mode 100644 src/app/components/gallery/gallery.component.css
+ create mode 100644 src/app/components/gallery/gallery.component.html
+ create mode 100644 src/app/components/gallery/gallery.component.spec.ts
+ create mode 100644 src/app/components/gallery/gallery.component.ts
+ create mode 100644 src/app/components/home-section/home-section.component.css
+ create mode 100644 src/app/components/home-section/home-section.component.html
+ create mode 100644 src/app/components/home-section/home-section.component.ts
+ create mode 100644 src/app/components/nab-bar/nab-bar.component.css
+ create mode 100644 src/app/components/nab-bar/nab-bar.component.html
+ create mode 100644 src/app/components/nab-bar/nab-bar.component.spec.ts
+ create mode 100644 src/app/components/nab-bar/nab-bar.component.ts
+ create mode 100644 src/app/components/package/package.component.css
+ create mode 100644 src/app/components/package/package.component.html
+ create mode 100644 src/app/components/package/package.component.spec.ts
+ create mode 100644 src/app/components/package/package.component.ts
+ create mode 100644 src/app/components/services/services.component.css
+ create mode 100644 src/app/components/services/services.component.html
+ create mode 100644 src/app/components/services/services.component.ts
+ create mode 100644 src/app/components/testimonials/testimonials.component.css
+ create mode 100644 src/app/components/testimonials/testimonials.component.html
+ create mode 100644 src/app/components/testimonials/testimonials.component.spec.ts
+ create mode 100644 src/app/components/testimonials/testimonials.component.ts
+ create mode 100644 src/index.html
+ create mode 100644 src/main.server.ts
+ create mode 100644 src/main.ts
+ create mode 100644 src/server.ts
+ create mode 100644 src/styles.css
+ create mode 100644 tsconfig.app.json
+ create mode 100644 tsconfig.json
+ create mode 100644 tsconfig.spec.json
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> git remote add origin https://github.com/Zenil03/The-Threading-House.git
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> git push -u origin master
+Enumerating objects: 98, done.
+Counting objects: 100% (98/98), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (98/98), done.
+Writing objects: 100% (98/98), 6.47 MiB | 8.30 MiB/s, done.
+Total 98 (delta 18), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (18/18), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Zenil03/The-Threading-House/pull/new/master
+remote:
+To https://github.com/Zenil03/The-Threading-House.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> npm install -g angular-cli-ghpages
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+changed 98 packages in 20s
+
+21 packages are looking for funding
+  run `npm fund` for details
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> ng build --configuration production --base-href="https://zenil03.github.io/The-Threading-House/"
+
+ERROR ReferenceError: IntersectionObserver is not defined
+    at e.ngAfterViewInit (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:108:11143)
+    at Tv (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:13962)
+    at N2 (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:14112)
+    at ib (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:13868)
+    at Nu (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:13594)
+    at zI (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:48989)
+    at Bf (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:49675)
+    at gy (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:49504)
+    at WI (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:49459)
+    at my (file:///C:/Users/zenil/OneDrive/temp/black%20theme/black%20theme/.angular/prerender-root/530eb791-e701-46ee-842f-8a9b012bf27e/main.server.mjs:8:49822)
+Browser bundles      
+Initial chunk files   | Names            |  Raw size | Estimated transfer size
+main-X3GWJFZG.js      | main             | 297.37 kB |                75.80 kB
+polyfills-FFHMD2TL.js | polyfills        |  34.52 kB |                11.28 kB
+styles-25MJSZ4M.css   | styles           |   6.85 kB |                 1.10 kB
+
+                      | Initial total    | 338.74 kB |                88.18 kB
+
+
+Server bundles
+Initial chunk files   | Names            |  Raw size
+server.mjs            | server           | 845.38 kB | 
+main.server.mjs       | main.server      | 742.64 kB | 
+polyfills.server.mjs  | polyfills.server | 267.76 kB | 
+chunk-X2SEQXRR.mjs    | -                |   2.41 kB | 
+chunk-GFUZYSQG.mjs    | -                |   1.24 kB | 
+
+Lazy chunk files      | Names            |  Raw size
+chunk-EJSJJTUO.mjs    | xhr2             |  12.14 kB | 
+chunk-TNO4MGIL.mjs    | xhr2             |  12.07 kB | 
+
+Prerendered 1 static route.
+Application bundle generation complete. [42.982 seconds]
+
+▲ [WARNING] src/app/components/testimonials/testimonials.component.css exceeded maximum budget. Budget 4.00 kB was not met by 364 bytes with a total of 4.36 kB.
+
+
+▲ [WARNING] src/app/components/about/about.component.css exceeded maximum budget. Budget 4.00 kB was not met by 1.33 kB with a total of 5.33 kB.
+
+
+▲ [WARNING] src/app/components/home-section/home-section.component.css exceeded maximum budget. Budget 4.00 kB was not met by 427 bytes with a total of 4.43 kB.      
+
+
+▲ [WARNING] src/app/components/gallery/gallery.component.css exceeded maximum budget. Budget 4.00 kB was not met by 145 bytes with a total of 4.14 kB.
+
+
+Output location: C:\Users\zenil\OneDrive\temp\black theme\black theme\dist\demo2
+
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> npx angular-cli-ghpages --dir=dist/demo2/browser
+Prerendered 1 static route.
+Application bundle generation complete. [42.982 seconds]
+
+▲ [WARNING] src/app/components/testimonials/testimonials.component.css exceeded maximum budget. Budget 4.00 kB was not met by 364 bytes with a total of 4.36 kB.      
+
+
+▲ [WARNING] src/app/components/about/about.component.css exceeded maximum budget. Budget 4.00 kB was not met by 1.33 kB with a total of 5.33 kB.
+
+
+▲ [WARNING] src/app/components/home-section/home-section.component.css exceeded maximum budget. Budget 4.00 kB was not met by 427 bytes with a total of 4.43 kB.      
+
+
+▲ [WARNING] src/app/components/gallery/gallery.component.css exceeded maximum budget. Budget 4.00 kB was not met by 145 bytes with a total of 4.14 kB.
+
+
+Output location: C:\Users\zenil\OneDrive\temp\black theme\black theme\dist\demo2
+
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme> npx angular-cli-ghpages --dir=dist/demo2/browser
+404.html file created
+.nojekyll file created
+🚀 Uploading via git, please wait...
+Cloning https://github.com/Zenil03/The-Threading-House.git into C:\Users\zenil\OneDrive\temp\black theme\black theme\node_modules\.cache\gh-pages\https!github.com!Zenil03!The-Threading-House.git
+Cleaning
+Fetching origin
+Checking out origin/gh-pages
+Removing files
+Copying files
+Adding all
+Committing
+Pushing
+🌟 Successfully published via angular-cli-ghpages! Have a nice day!
+PS C:\Users\zenil\OneDrive\temp\black theme\black theme>
