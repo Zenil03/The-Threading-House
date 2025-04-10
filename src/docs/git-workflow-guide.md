@@ -24,7 +24,7 @@ git commit -m "Merge feature-name into master"
 
 # 6. Push to master to trigger automatic deployment
 git push
-
+git checkout zenil
 # 7. GitHub Actions will automatically:
 #    - Build your Angular application
 #    - Deploy to GitHub Pages at https://zenil03.github.io/The-Threading-House/

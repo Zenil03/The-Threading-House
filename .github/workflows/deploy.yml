@@ -4,6 +4,11 @@ on:
   push:
     branches: [ master ]
 
+permissions:
+  contents: write  # Only grant write access to repository contents
+  pages: write     # Optional: if you're using GitHub Pages
+  # id-token: write  # Optional: if you're using GitHub Pages with OIDC # This allows the GITHUB_TOKEN to write to the repository contents
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
