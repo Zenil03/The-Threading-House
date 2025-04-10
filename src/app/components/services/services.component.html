@@ -1,0 +1,33 @@
+<section class="services" id="services">
+  <div class="background-shapes">
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+  <div class="container">
+    <div class="section-title">
+      <h1>{{ sectionTitle }}</h1>
+      <span>{{ sectionSubtitle }}</span>
+    </div>
+    <div class="services-content">
+      <div class="services-grid">
+        <div 
+          class="service-box" 
+          *ngFor="let service of services" 
+          (click)="scrollToPackage()"
+          style="cursor: pointer;"
+        >
+          <div class="service-inner">
+            <div class="service-icon">
+              <img [src]="service.icon" [alt]="service.name">
+            </div>
+            <h3>{{ service.name }}</h3>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Package Section -->
+<section id="package" #packageSection>
+</section>

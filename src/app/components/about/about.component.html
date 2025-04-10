@@ -1,0 +1,72 @@
+<div class="shared-background-container" style="background-image: url('about-bac-img.png');">
+    <section #aboutSection class="about-services" id="about-section">
+
+
+        <!-- Only render animated shapes when in viewport -->
+        <div class="background-shapes" *ngIf="isInViewport">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <!-- Reduced number of shapes for better performance -->
+        </div>
+
+        <div class="container">
+            <section id="about">
+                <!-- Our Story Section -->
+                <div class="section-title">
+                    <h1>Our Story</h1>
+                    <span>Studio Hair</span>
+                </div>
+
+                <div class="about-detail">
+                    <div class="glass-card about-detail-content">
+                        <div class="about-img">
+                            <img src="about-img1.jpg" alt="About us" loading="lazy" width="100%" height="400">
+                            <div class="img-accent"></div>
+                        </div>
+                        <div class="about-description">
+                            <p>Get flawless brows & smooth skin with our expert threading! We specialize in pain-free eyebrow shaping, 
+                                facial hair removal, and skin treatments using hygienic, single-use threads. 
+                                Our skilled artists create your ideal look with precision. Affordable prices,
+                                 quick service, and walk-ins welcome!</p>
+                            <p>Visit us for:
+                                ✓ Eyebrow Threading
+                                ✓ Upper Lip/Chin
+                                ✓ Full Face Cleanup
+                                ✓ Facial Bleach</p>
+                            <p>Call now or walk in! Your best look starts here 💖</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="services">
+                <!-- Services Section -->
+                <div class="section-title services-title">
+                    <h1>{{ sectionTitle }}</h1>
+                    <span>{{ sectionSubtitle }}</span>
+                </div>
+
+                <div class="services-content">
+                    <div class="services-grid">
+                      <div 
+                        class="service-box" 
+                        *ngFor="let service of services" 
+                        (click)="scrollToPackage()"
+                        style="cursor: pointer;"
+                      >
+                        <div class="service-inner">
+                          <div class="service-icon">
+                            <img [src]="service.icon" [alt]="service.name">
+                          </div>
+                          <h3>{{ service.name }}</h3>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<!-- Package Section -->
+<section id="package" #packageSection>
+</section>

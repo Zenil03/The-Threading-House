@@ -1,0 +1,32 @@
+<!-- Testimonials Section Start -->
+<section class="testimonials" id="testimonials">
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+    <div class="testimonials-content">
+        <div class="section-title">
+            <h1>Testimonials</h1>
+            <span>See what our customers say</span>
+        </div>
+        <div class="testimonials-card">
+            <div *ngFor="let testimonial of testimonials" class="testimonials-items">
+                <div class="testimonials-img">
+                    <img [src]="testimonial.image" [alt]="testimonial.name">
+                </div>
+                <div class="testimonials-box">
+                    <div class="testimonials-name">
+                        <h1>{{ testimonial.name }}</h1>
+                        <ng-container *ngFor="let star of stars">
+                            <i class="fa-solid fa-star"></i>
+                        </ng-container>
+                    </div>
+                    <div class="testimonials-description">
+                        <p>{{ testimonial.review }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials Section End -->

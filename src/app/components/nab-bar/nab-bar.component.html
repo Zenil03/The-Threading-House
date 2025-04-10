@@ -1,0 +1,37 @@
+<header class="header" id="header">
+    <div class="navbar">
+        <div class="logo" style="max-width: 200px;">
+            <img src="logo.png" alt="Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <nav class="nav-menu" [class.show-nav]="showNav">
+            <ul class="nav-list">
+                <li><a href="javascript:void(0)" class="nav-link" 
+                       [class.active]="activeIndex === 0"
+                       (click)="scrollToSection('home-section', 0)">home</a>
+                </li>
+                <li><a href="javascript:void(0)" class="nav-link" 
+                       [class.active]="activeIndex === 1"
+                       (click)="scrollToSection('about', 1)">about</a>
+                </li>
+                <li><a href="javascript:void(0)" class="nav-link" 
+                       [class.active]="activeIndex === 2"
+                       (click)="scrollToSection('services', 2)">services</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" 
+                       [class.active]="activeIndex === 3"
+                       (click)="scrollToSection('package', 3)">package</a>
+                </li>
+                <li><a href="javascript:void(0)" class="nav-link" 
+                       [class.active]="activeIndex === 4"
+                       (click)="scrollToSection('gallery', 4)">gallery</a>
+                </li>
+                <li><a href="javascript:void(0)" class="nav-link" 
+                       [class.active]="activeIndex === 5"
+                       (click)="scrollToSection('contact', 5)">contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="nav-toggle" (click)="toggleNav()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>

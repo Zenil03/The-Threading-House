@@ -1,0 +1,71 @@
+/* src\app\app.component.css */
+.shared-background-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: all 0.8s ease-in-out;
+}
+
+.shared-background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    transition: all 0.8s ease-in-out;
+}
+
+.shared-background-container > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fade-in animation for section transitions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Float animation for decorative elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+.element-animation {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.delayed-animation {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
