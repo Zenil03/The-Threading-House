@@ -197,3 +197,52 @@ Committing
 Pushing
 🌟 Successfully published via angular-cli-ghpages! Have a nice day!
 PS C:\Users\zenil\OneDrive\temp\black theme\black theme>
+
+
+
+<!-- create new branch and push it to master it will auto deploy-->
+
+git add .
+git commit -m "Your commit message"
+
+git push origin feature-branch
+
+git checkout master
+
+git pull
+
+git merge feature-branch
+
+git add .
+git commit -m "Merge feature-branch into master"
+
+git push
+
+
+<!--  -->
+
+Add and commit your changes in your feature branch:
+bashgit add .
+git commit -m "Your commit message"
+
+Push your feature branch to GitHub (replace "your-branch-name" with your actual branch name):
+bashgit push origin your-branch-name
+
+Switch to the master branch:
+bashgit checkout master
+
+Pull the latest changes from master:
+bashgit pull
+
+Merge your feature branch into master (again, replace with your actual branch name):
+bashgit merge your-branch-name
+
+If there are any merge conflicts, resolve them and commit the merge:
+bashgit add .
+git commit -m "Merge your-branch-name into master"
+
+Push the updated master to GitHub:
+bashgit push
+
+
+After pushing to master, GitHub Actions will automatically build and deploy your site. You don't need to do anything else for deployment.
