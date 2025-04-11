@@ -59,8 +59,8 @@ export class PackageComponent {
         { name: 'Forehead Wax', included: true, description: '$12' },
         { name: 'Full Face Wax', included: true, description: '$60' },
         { name: 'Nose Wax', included: true, description: '$12' },
-        { name: 'Nostril Wax', included: true, description: '$12' },
-        { name: 'Ear Wax', included: true, description: '$12' },
+        { name: 'Nostril Wax', included: true, description: '$15' },
+        { name: 'Ear Wax', included: true, description: '$15' },
         { name: 'Nape Wax', included: true, description: '$20' }
       ],
       price: ''

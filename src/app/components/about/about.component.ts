@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 interface Service {
   id: number;
@@ -34,22 +34,27 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
     { id: 8, name: 'Henna Tattoo', icon: 'tattoo.png' }
   ];
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   // Add this function for trackBy
   trackById(index: number, item: Service): number {
     return item.id;
   }
 
   ngAfterViewInit() {
-    // Set up intersection observer to track when the section is visible
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        this.isInViewport = entries[0].isIntersecting;
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (this.aboutSection) {
-      this.observer.observe(this.aboutSection.nativeElement);
+    // Only create and use IntersectionObserver in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      // Set up intersection observer to track when the section is visible
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          this.isInViewport = entries[0].isIntersecting;
+        },
+        { threshold: 0.1 }
+      );
+      
+      if (this.aboutSection) {
+        this.observer.observe(this.aboutSection.nativeElement);
+      }
     }
   }
 
@@ -61,7 +66,7 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   }
 
   scrollToPackage() {
-    if (this.packageSection) {
+    if (isPlatformBrowser(this.platformId) && this.packageSection) {
       this.packageSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
