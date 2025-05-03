@@ -1,16 +1,15 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages and cPanel
 
 on:
   push:
     branches: [ master ]
 
 permissions:
-  contents: write  # Only grant write access to repository contents
-  pages: write     # Optional: if you're using GitHub Pages
-  # id-token: write  # Optional: if you're using GitHub Pages with OIDC # This allows the GITHUB_TOKEN to write to the repository contents
+  contents: write  # For GitHub Pages deployment
+  pages: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,11 +23,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build
-        run: npm run build -- --configuration production --base-href="https://zenil03.github.io/The-Threading-House/"
+      - name: Build for GitHub Pages
+        run: npm run build -- --configuration=production --base-href="https://zenil03.github.io/The-Threading-House/"
+        
+      - name: Copy GitHub Pages build
+        run: cp -r dist/demo2/browser gh-pages-build
+      
+      - name: Build for Custom Domain
+        run: npm run build -- --configuration=production --base-href="https://threadinghouse.com/"
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/demo2/browser
+          folder: gh-pages-build
+          
+      - name: FTP Deploy to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/demo2/browser/
+          server-dir: /public_html/
+          dangerous-clean-slate: true # This will delete all existing files at the destination before uploading

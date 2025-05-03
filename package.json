@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github": "ng build --configuration=production --base-href=\"https://zenil03.github.io/The-Threading-House/\"",
+    "build:custom": "ng build --configuration=production --base-href=\"https://threadinghouse.com/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:demo2": "node dist/demo2/server/server.mjs"
