@@ -24,13 +24,13 @@ jobs:
         run: npm ci
         
       - name: Build for GitHub Pages
-        run: npm run build -- --configuration=production --base-href="https://zenil03.github.io/The-Threading-House/" --skip-font-inlining
+        run: npm run build:github
         
       - name: Copy GitHub Pages build
         run: cp -r dist/demo2/browser gh-pages-build
       
       - name: Build for Custom Domain
-        run: npm run build -- --configuration=production --base-href="https://threadinghouse.com/" --skip-font-inlining
+        run: npm run build:custom
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
