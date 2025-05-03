@@ -23,11 +23,61 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Create .htaccess file
+        run: |
+          cat << EOF > .htaccess
+          # Force HTTPS
+          RewriteEngine On
+          RewriteCond %{HTTPS} off
+          RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+          # First check if the requested file exists in the root
+          RewriteCond %{REQUEST_FILENAME} -f [OR]
+          RewriteCond %{REQUEST_FILENAME} -d
+          RewriteRule ^ - [L]
+
+          # If the request is for an asset, check if it exists in browser directory
+          RewriteCond %{REQUEST_URI} \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$
+          RewriteCond %{DOCUMENT_ROOT}/browser%{REQUEST_URI} -f
+          RewriteRule ^(.*)$ browser/$1 [L]
+
+          # Otherwise send all non-file requests to browser/index.html
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^ browser/index.html [L]
+
+          # Ensure proper MIME types
+          <IfModule mod_mime.c>
+            AddType application/javascript .js
+            AddType text/css .css
+            AddType image/svg+xml .svg
+            AddType application/font-woff .woff
+            AddType application/font-woff2 .woff2
+            AddType application/vnd.ms-fontobject .eot
+            AddType application/x-font-ttf .ttf
+          </IfModule>
+
+          # Cache control
+          <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresByType image/jpeg "access plus 1 year"
+            ExpiresByType image/gif "access plus 1 year"
+            ExpiresByType image/png "access plus 1 year"
+            ExpiresByType image/webp "access plus 1 year"
+            ExpiresByType image/svg+xml "access plus 1 year"
+            ExpiresByType text/css "access plus 1 month"
+            ExpiresByType application/javascript "access plus 1 month"
+          </IfModule>
+          EOF
+        
       - name: Build for GitHub Pages
         run: npm run build:github
         
-      - name: Copy GitHub Pages build
-        run: cp -r dist/demo2/browser gh-pages-build
+      - name: Prepare GitHub Pages deployment
+        run: |
+          mkdir -p gh-pages-build
+          cp -r dist/demo2/* gh-pages-build/
+          cp .htaccess gh-pages-build/
       
       - name: Build for Custom Domain
         run: npm run build:custom
@@ -38,14 +88,18 @@ jobs:
           branch: gh-pages
           folder: gh-pages-build
           
+      - name: Add .htaccess to dist folder
+        run: cp .htaccess ./dist/demo2/
+          
       - name: FTP Deploy to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: threadinghouse.com
           username: ijaj0w32271i
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/demo2/browser/
+          local-dir: ./dist/demo2/
           server-dir: /public_html/
-          dangerous-clean-slate: true # This will delete all existing files at the destination before uploading
-          protocol: ftp # explicitly set the protocol
+          dangerous-clean-slate: true
+          protocol: ftp
           port: 21
+          log-level: verbose
