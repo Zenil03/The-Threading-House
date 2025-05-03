@@ -38,7 +38,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "client-and-server-router",
             "ssr": {
               "entry": "src/server.ts"
             }

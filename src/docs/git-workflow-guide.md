@@ -1,3 +1,7 @@
+server: threadinghouse.com
+username: ijaj0w32271i
+password: Nirmit25#06
+
 # 1. Create a new branch from master
 git checkout master
 git pull  # Ensure master is up-to-date
