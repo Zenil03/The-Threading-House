@@ -95,7 +95,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: threadinghouse.com
-          username: admin@threadinghouse.com
+          username: ijaj0w32271i
           password: Nirmit25#06
           local-dir: ./dist/demo2/
           server-dir: /public_html/
