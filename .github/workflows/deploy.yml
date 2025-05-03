@@ -41,7 +41,7 @@ jobs:
       - name: FTP Deploy to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.threadinghouse.com
+          server: threadinghouse.com
           username: ijaj0w32271i
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/demo2/browser/
