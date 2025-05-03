@@ -26,9 +26,9 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   services: Service[] = [
     { id: 1, name: 'Threading', icon: 'eyebrow.png' },
     { id: 2, name: 'Hair Massage', icon: 'hairmsg.png' },
-    { id: 3, name: 'Eyelashes', icon: 'eyelashes.png' },
+    { id: 3, name: 'Eyelash Lift', icon: 'eyelashes.png' },
     { id: 4, name: 'Eyebrow Tinting', icon: 'eyetin.png' },
-    { id: 5, name: 'Leg Wax', icon: 'legwax.png' },
+    { id: 5, name: 'Body Waxing', icon: 'legwax.png' },
     { id: 6, name: 'Facial', icon: 'facial.png' },
     { id: 7, name: 'Face Waxing', icon: 'facewax.png' },
     { id: 8, name: 'Henna Tattoo', icon: 'tattoo.png' }
