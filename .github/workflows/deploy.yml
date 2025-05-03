@@ -23,6 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Update angular.json configuration
+        run: |
+          sed -i 's/"outputMode": "server"/"outputMode": "server"/g' angular.json
+        
       - name: Create .htaccess file
         run: |
           cat << EOF > .htaccess
