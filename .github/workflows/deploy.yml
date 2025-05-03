@@ -41,9 +41,11 @@ jobs:
       - name: FTP Deploy to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: ftp.threadinghouse.com
+          username: ijaj0w32271i
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/demo2/browser/
           server-dir: /public_html/
           dangerous-clean-slate: true # This will delete all existing files at the destination before uploading
+          protocol: ftp # explicitly set the protocol
+          port: 21
