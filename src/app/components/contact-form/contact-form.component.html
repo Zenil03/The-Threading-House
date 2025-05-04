@@ -1,0 +1,109 @@
+<!-- src/app/components/contact-form/contact-form.component.html with Angular 19 control flow -->
+<div class="contact-form-overlay">
+    <div class="contact-form-container">
+        <div class="close-button" (click)="closeForm()">×</div>
+
+        <div class="form-header">
+            <h2>Schedule Your Appointment</h2>
+            <p>Fill out the form below and we'll contact you shortly</p>
+        </div>
+
+        @if (submitSuccess) {
+        <div class="form-success">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. We'll get back to you soon!</p>
+        </div>
+        }
+
+        @if (submitError) {
+        <div class="form-error">
+            <div class="error-icon">!</div>
+            <h3>Something Went Wrong</h3>
+            <p>There was an error sending your message. Please try again later.</p>
+        </div>
+        }
+
+        @if (!submitSuccess && !submitError) {
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" formControlName="name" placeholder="Your Name"
+                    [ngClass]="{'invalid': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}">
+                @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+                <div class="error-message">
+                    Name is required
+                </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="Your Email"
+                    [ngClass]="{'invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}">
+                @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                <div class="error-message">
+                    Valid email is required
+                </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" formControlName="phone" placeholder="Your Phone Number"
+                    [ngClass]="{'invalid': contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched}">
+                @if (contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched) {
+                <div class="error-message">
+                    Phone number is required
+                </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service" formControlName="service"
+                    [ngClass]="{'invalid': contactForm.get('service')?.invalid && contactForm.get('service')?.touched}">
+                    <option value="" style="background-color: black; color: white;">Select a Service</option>
+                    <option value="Threading" style="background-color: black; color: white;">Threading</option>
+                    <option value="Face Waxing" style="background-color: black; color: white;">Face Waxing</option>
+                    <option value="Body Waxing" style="background-color: black; color: white;">Body Waxing </option>
+                    <option value="Tinting" style="background-color: black; color: white;">Tinting</option>
+                    <option value="Hair Massage with Oil" style="background-color: black; color: white;">Hair Massage
+                        with Oil</option>
+                    <option value="Facial" style="background-color: black; color: white;">Facial</option>
+                    <option value="Lash Lift" style="background-color: black; color: white;">Lash Lift</option>
+                    <option value="Henna Tattoo" style="background-color: black; color: white;">Henna Tattoo</option>
+                    <option value="Other" style="background-color: black; color: white;">Other</option>
+                </select>
+                @if (contactForm.get('service')?.invalid && contactForm.get('service')?.touched) {
+                <div class="error-message">
+                    Please select a service
+                </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" formControlName="message"
+                    placeholder="Tell us about your appointment requirements"
+                    [ngClass]="{'invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"></textarea>
+                @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+                <div class="error-message">
+                    Message is required
+                </div>
+                }
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || isSubmitting">
+                    @if (!isSubmitting) {
+                    <span>Send Message</span>
+                    } @else {
+                    <span class="loading-spinner"></span>
+                    }
+                </button>
+            </div>
+        </form>
+        }
+    </div>
+</div>

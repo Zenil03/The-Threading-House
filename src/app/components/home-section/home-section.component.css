@@ -165,6 +165,12 @@
     display: flex;
     gap: 1.5rem;
     animation: fadeInUp 1.4s ease-out;
+
+}
+
+.cta-container:hover {
+    cursor: pointer;
+    
 }
 
 .btn-primary {
